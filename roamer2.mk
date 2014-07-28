@@ -3,9 +3,9 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 # The gps config appropriate for this device
 $(call inherit-product, device/common/gps/gps_us_supl.mk)
 
-$(call inherit-product-if-exists, vendor/zte/atlas40/atlas40-vendor.mk)
+$(call inherit-product-if-exists, vendor/zte/roamer2/roamer2-vendor.mk)
 
-DEVICE_PACKAGE_OVERLAYS += device/zte/atlas40/overlay
+DEVICE_PACKAGE_OVERLAYS += device/zte/roamer2/overlay
 
 # Audio
 PRODUCT_PACKAGES += \
@@ -25,7 +25,7 @@ PRODUCT_PACKAGES += \
 
 # GPS
 PRODUCT_PACKAGES += \
-    gps.atlas40
+    gps.roamer2
 
 # Graphics
 PRODUCT_PACKAGES += \
@@ -36,7 +36,7 @@ PRODUCT_PACKAGES += \
 
 # Lights
 PRODUCT_PACKAGES += \
-    lights.atlas40
+    lights.roamer2
 
 # Power HAL
 PRODUCT_PACKAGES += \
@@ -54,15 +54,15 @@ PRODUCT_PACKAGES += \
 
 # Ramdisk
 PRODUCT_COPY_FILES += \
-    $(call find-copy-subdir-files,*,device/zte/atlas40/ramdisk,root)
+    $(call find-copy-subdir-files,*,device/zte/roamer2/ramdisk,root)
 
 # Recovery
 PRODUCT_COPY_FILES += \
-    $(call find-copy-subdir-files,*,device/zte/atlas40/prebuilt/recovery,recovery/root)
+    $(call find-copy-subdir-files,*,device/zte/roamer2/prebuilt/recovery,recovery/root)
 
 # Prebuilt
 PRODUCT_COPY_FILES += \
-    $(call find-copy-subdir-files,*,device/zte/atlas40/prebuilt/system,system)
+    $(call find-copy-subdir-files,*,device/zte/roamer2/prebuilt/system,system)
 
 # Hardware features available on this device
 PRODUCT_COPY_FILES += \
