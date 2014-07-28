@@ -1,7 +1,5 @@
 CyanogenMod 11 device configuration for ZTE V 790.
 
-http://www.modaco.com/topic/367241-cyanogenmod-11
-
 How to build:
 -------------
 
