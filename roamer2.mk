@@ -7,6 +7,9 @@ $(call inherit-product-if-exists, vendor/zte/roamer2/roamer2-vendor.mk)
 
 DEVICE_PACKAGE_OVERLAYS += device/zte/roamer2/overlay
 
+PRODUCT_AAPT_CONFIG := normal mdpi hdpi xhdpi
+PRODUCT_AAPT_PREF_CONFIG := mdpi
+
 # Audio
 PRODUCT_PACKAGES += \
     audio.a2dp.default \
@@ -66,7 +69,7 @@ PRODUCT_COPY_FILES += \
 
 # Hardware features available on this device
 PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/android.hardware.camera.autofocus.xml:system/etc/permissions/android.hardware.camera.autofocus.xml \
+    frameworks/native/data/etc/android.hardware.camera.xml:system/etc/permissions/android.hardware.camera.xml \
     frameworks/native/data/etc/android.hardware.location.gps.xml:system/etc/permissions/android.hardware.location.gps.xml \
     frameworks/native/data/etc/android.hardware.sensor.accelerometer.xml:system/etc/permissions/android.hardware.sensor.accelerometer.xml \
     frameworks/native/data/etc/android.hardware.sensor.compass.xml:system/etc/permissions/android.hardware.sensor.compass.xml \
@@ -83,11 +86,16 @@ PRODUCT_COPY_FILES += \
 # Enable repeatable keys in CWM
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.cwm.enable_key_repeat=true
+    
+#Enable DualSIM
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.dsds.enabled=true
+    
+#Misc
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.sys.timezone=Europe/Moscow
 
 $(call inherit-product, frameworks/native/build/phone-hdpi-512-dalvik-heap.mk)
 $(call inherit-product, build/target/product/full_base_telephony.mk)
-
-PRODUCT_AAPT_CONFIG := normal hdpi
-PRODUCT_AAPT_PREF_CONFIG := hdpi
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
