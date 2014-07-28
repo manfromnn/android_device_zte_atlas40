@@ -13,7 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
--include vendor/zte/atlas40/BoardConfigVendor.mk
+-include vendor/zte/roamer2/BoardConfigVendor.mk
 
 # Platform
 TARGET_NO_BOOTLOADER := true
@@ -34,20 +34,24 @@ TARGET_GLOBAL_CFLAGS += -mtune=cortex-a5 -mfpu=neon-vfpv4 -mfloat-abi=softfp
 TARGET_GLOBAL_CPPFLAGS += -mtune=cortex-a5 -mfpu=neon-vfpv4 -mfloat-abi=softfp
 
 # Kernel
-TARGET_KERNEL_SOURCE := kernel/zte/msm7x27a
-TARGET_KERNEL_CONFIG := cyanogen_atlas40_defconfig
-TARGET_BOOTLOADER_BOARD_NAME := atlas40
-BOARD_KERNEL_CMDLINE := androidboot.hardware=atlas40
+TARGET_KERNEL_SOURCE := kernel
+TARGET_KERNEL_CONFIG := roamer2_jb_defconfig
+TARGET_BOOTLOADER_BOARD_NAME := roamer2
+BOARD_KERNEL_CMDLINE := androidboot.hardware=roamer2
 BOARD_KERNEL_BASE := 0x00200000
-BOARD_KERNEL_PAGESIZE := 4096
+BOARD_SUPPORTS_2KNAND_PAGE := true
+BOARD_KERNEL_2KPAGESIZE := 2048
+BOARD_KERNEL_2KSPARESIZE := 64
+BOARD_KERNEL_SPARESIZE := 128
+TARGET_USES_UNCOMPRESSED_KERNEL := false
 
-TARGET_SPECIFIC_HEADER_PATH := device/zte/atlas40/include
+TARGET_SPECIFIC_HEADER_PATH := device/zte/roamer2/include
 
 # Build
 TARGET_SYSTEMIMAGE_USE_SQUISHER := true
 
 # Graphics
-BOARD_EGL_CFG := device/zte/atlas40/prebuilt/system/lib/egl/egl.cfg
+BOARD_EGL_CFG := device/zte/roamer2/prebuilt/system/lib/egl/egl.cfg
 USE_OPENGL_RENDERER := true
 TARGET_QCOM_DISPLAY_VARIANT := legacy
 BOARD_ADRENO_DECIDE_TEXTURE_TARGET := true
@@ -88,7 +92,7 @@ BOARD_USES_LEGACY_ALSA_AUDIO := true
 
 # Bluetooth
 BOARD_HAVE_BLUETOOTH := true
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/zte/atlas40/bluetooth
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/zte/roamer2/bluetooth
 
 # Camera
 BOARD_NEEDS_MEMORYHEAPPMEM := true
@@ -102,7 +106,7 @@ BOARD_HAVE_QCOM_FM := true
 
 # GPS
 BOARD_USES_QCOM_GPS := true
-BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := atlas40
+BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := roamer2
 BOARD_VENDOR_QCOM_GPS_LOC_API_AMSS_VERSION := 50000
 
 # Webkit
@@ -110,18 +114,18 @@ PRODUCT_PREBUILT_WEBVIEWCHROMIUM := yes
 TARGET_FORCE_CPU_UPLOAD := true
 
 # Hardware tunables framework
-BOARD_HARDWARE_CLASS := device/zte/atlas40/cmhw/
+BOARD_HARDWARE_CLASS := device/zte/roamer2/cmhw/
 
 # Recovery
-TARGET_RECOVERY_FSTAB := device/zte/atlas40/ramdisk/fstab.atlas40
+TARGET_RECOVERY_FSTAB := device/zte/roamer2/ramdisk/fstab.roamer2
 BOARD_HAS_NO_SELECT_BUTTON := true
 BOARD_UMS_LUNFILE := "sys/class/android_usb/f_mass_storage/lun/file"
 TARGET_USERIMAGES_USE_EXT4 := true
 
 # Partition sizes
-BOARD_BOOTIMAGE_PARTITION_SIZE := 0x01000000
-BOARD_RECOVERYIMAGE_PARTITION_SIZE := 0x01000000
-BOARD_SYSTEMIMAGE_PARTITION_SIZE := 419430400
-BOARD_CACHEIMAGE_PARTITION_SIZE := 314572800
-BOARD_USERDATAIMAGE_PARTITION_SIZE := 2684354560
+BOARD_BOOTIMAGE_PARTITION_SIZE := 0x00a00000
+BOARD_RECOVERYIMAGE_PARTITION_SIZE := 0x00c00000
+BOARD_SYSTEMIMAGE_PARTITION_SIZE := 460062720
+BOARD_CACHEIMAGE_PARTITION_SIZE := 110100480
+BOARD_USERDATAIMAGE_PARTITION_SIZE := 429916160
 BOARD_FLASH_BLOCK_SIZE := 131072
