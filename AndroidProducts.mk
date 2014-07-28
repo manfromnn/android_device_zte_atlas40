@@ -1,2 +1,2 @@
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/atlas40.mk
+    $(LOCAL_DIR)/roamer2.mk
