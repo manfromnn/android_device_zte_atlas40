@@ -12,7 +12,7 @@ Add support for V790:
 
     curl -L -o 0001-add-roamer2-to-config.sh.patch -O -L https://raw.github.com/manfromnn/android_device_zte_atlas40/b2g/patches/0001-add-roamer2-to-config.sh.patch
     git am -3 0001-add-roamer2-to-config.sh.patch
-    curl --create-dirs -L -o .repo/local_manifests/manifest_zte_roamer2.xml -O -L https://raw.github.com/manfromnn/android_device_zte_roamer2/b2g/patches/manifest_zte_roamer2.xml
+    curl --create-dirs -L -o .repo/local_manifests/manifest_zte_roamer2.xml -O -L https://raw.github.com/manfromnn/android_device_zte_atlas40/b2g/patches/manifest_zte_roamer2.xml
     ./config.sh roamer2
 
 Build:
