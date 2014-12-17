@@ -25,7 +25,7 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 
-import init.atlas40.usb.rc
+import init.roamer2.usb.rc
 
 on init
     # Set permissions for persist partition
