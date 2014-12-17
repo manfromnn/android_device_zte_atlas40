@@ -1,7 +1,7 @@
 From e7abe76f6cc46aabf4dbf99c4758b2f68127865d Mon Sep 17 00:00:00 2001
 From: Konsta <konsta09@gmail.com>
 Date: Sat, 28 Sep 2013 13:20:52 +0300
-Subject: [PATCH] add atlas40 to config.sh
+Subject: [PATCH] add roamer2 to config.sh
 
 ---
  config.sh |    7 +++++++
@@ -15,9 +15,9 @@ index bbb0c50..88e5843 100755
  	repo_sync $1
  	;;
  
-+"atlas40")
-+	echo DEVICE=atlas40 >> .tmp-config &&
-+	echo LUNCH=atlas40-userdebug >> .tmp-config &&
++"roamer2")
++	echo DEVICE=roamer2 >> .tmp-config &&
++	echo LUNCH=roamer2-userdebug >> .tmp-config &&
 +	repo_sync inari
 +	;;
 +
@@ -28,7 +28,7 @@ index bbb0c50..88e5843 100755
  	echo - nexus-s
  	echo - nexus-s-4g
  	echo - flo "(Nexus 7 2013)"
-+	echo - atlas40
++	echo - roamer2
  	echo - otoro
  	echo - unagi
  	echo - inari
