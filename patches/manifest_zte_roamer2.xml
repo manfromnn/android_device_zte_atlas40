@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+    <remote name="github"
+        fetch="git://github.com/" />
+
+    <remove-project name="codeaurora_kernel_msm" />
+
+    <!-- ZTE Blade III -->
+    <project path="device/zte/atlas40" name="manfromnn/android_device_zte_atlas40" remote="github" revision="b2g" />
+
+    <!-- BusyBox -->
+    <project path="external/busybox" name="CyanogenMod/android_external_busybox" remote="github" revision="ics" />
+</manifest>
